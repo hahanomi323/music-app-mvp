@@ -7,7 +7,9 @@ services:
     startCommand: npx prisma migrate deploy && node dist/src/index.js
     envVars:
       - key: DATABASE_URL
-        sync: false
+        fromDatabase:
+          name: music-app-db
+          property: connectionString
       - key: JWT_SECRET
         sync: false
       - key: PORT
@@ -26,5 +28,4 @@ services:
 databases:
   - name: music-app-db
     databaseName: musicapp
-    user: postgres
     plan: free
