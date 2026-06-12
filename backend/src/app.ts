@@ -22,13 +22,13 @@ export function createApp() {
 
   app.get('/health', (_req, res) => res.json({ ok: true }));
 
-  app.use('/auth', authRoutes);
-  app.use('/songs', songsRoutes);
-  app.use('/playlists', playlistsRoutes);
-  app.use('/favorites', favoritesRoutes);
-  app.use('/history', historyRoutes);
-  app.use('/me', meRoutes);
-  app.use('/upload', uploadRoutes);
+ app.use('/api/auth', authRoutes);
+app.use('/api/songs', songsRoutes);
+app.use('/api/playlists', playlistsRoutes);
+app.use('/api/favorites', favoritesRoutes);
+app.use('/api/history', historyRoutes);
+app.use('/api/me', meRoutes);
+app.use('/api/upload', uploadRoutes);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   app.use((err: any, _req: any, res: any, _next: any) => {
